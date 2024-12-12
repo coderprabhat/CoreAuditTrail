@@ -1,0 +1,6 @@
+@CoreAuditTrail_HostAddress = http://localhost:5279
+
+GET {{CoreAuditTrail_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

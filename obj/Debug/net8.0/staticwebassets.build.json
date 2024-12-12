@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "HRYuB1XCKHA+Al9Hlc2ULporhsG9iA4a9J+6DECBjfc=",
+  "Source": "CoreAuditTrail",
+  "BasePath": "_content/CoreAuditTrail",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
