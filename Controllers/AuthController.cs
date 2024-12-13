@@ -44,7 +44,7 @@ namespace CoreAuditTrail.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserDto user)
         {
-            Log.Information("User Logged in Start");
+
             var existingUser = _context.Users
                 .FirstOrDefault(u => u.Username == user.Username || u.Email == user.Email);
 
@@ -57,7 +57,7 @@ namespace CoreAuditTrail.Controllers
 
             // Pass the RoleType (enum or string) instead of the entire Role object
             var token = TokenService.GenerateToken(existingUser.Username, existingUser.Role.ToString(), existingUser.Email, existingUser.Id);
-            Log.Information("User Logged in Successfully");
+           
             return Ok(new { Token = token });
 
         }

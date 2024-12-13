@@ -41,25 +41,23 @@ namespace CoreAuditTrail.Services
             return claims;
         }
 
-        public static (string Email, string Subject) DecodeJwt(string token)
+        public static (string? Email, string? Subject) DecodeJwt(string token)
         {
-            // Initialize a JwtSecurityTokenHandler
             var handler = new JwtSecurityTokenHandler();
 
-            // Validate if the token is in a valid format
             if (!handler.CanReadToken(token))
             {
                 throw new ArgumentException("Invalid JWT token");
             }
 
-            // Decode the token
             var jwtToken = handler.ReadJwtToken(token);
 
-            // Extract claims from the payload
             var email = jwtToken.Claims.FirstOrDefault(c => c.Type == "email")?.Value;
             var subject = jwtToken.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
 
             return (email, subject);
         }
+
+
     }
 }

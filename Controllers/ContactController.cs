@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using System.Numerics;
 
 namespace CoreAuditTrail.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize(Roles = "Admin, Manager, User")]
+    [Authorize(Roles = "Admin, Manager, User")]
     public class ContactController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -46,6 +47,8 @@ namespace CoreAuditTrail.Controllers
         [HttpGet]
         public async Task<IActionResult> GetContacts()
         {
+            int a = 0;
+            int r = 100 / a;
             var contacts = await _context.Contacts.ToListAsync();
             return Ok(contacts);
         }
