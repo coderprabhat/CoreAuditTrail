@@ -47,8 +47,6 @@ namespace CoreAuditTrail.Controllers
         [HttpGet]
         public async Task<IActionResult> GetContacts()
         {
-            int a = 0;
-            int r = 100 / a;
             var contacts = await _context.Contacts.ToListAsync();
             return Ok(contacts);
         }

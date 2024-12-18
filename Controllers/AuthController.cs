@@ -22,6 +22,7 @@ namespace CoreAuditTrail.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User user)
         {
+
             if (_context.Users.Any(u => u.Username == user.Username))
                 return BadRequest("Username already exists.");
 

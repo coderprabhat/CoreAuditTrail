@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreAuditTrail.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241212220529_Initial-Migrations")]
-    partial class InitialMigrations
+    [Migration("20241218064243_Initial_Migrations")]
+    partial class Initial_Migrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
